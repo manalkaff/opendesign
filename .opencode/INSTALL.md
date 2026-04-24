@@ -14,7 +14,7 @@ Add opendesign to the `plugin` array in your `opencode.json` (global or project-
 }
 ```
 
-Restart OpenCode. The plugin auto-installs and registers all OpenDesign skills.
+Restart OpenCode. That's it — the plugin auto-installs and registers all skills.
 
 Verify by asking: "What design skills do you have?"
 
@@ -26,8 +26,6 @@ Use OpenCode's native `skill` tool:
 use skill tool to list skills
 use skill tool to load opendesign
 ```
-
-The `opendesign` skill is also auto-injected into the first user message of every session, so you can start asking for designs without calling it explicitly.
 
 ## Updating
 
@@ -51,13 +49,12 @@ To pin a specific version:
 
 ### Skills not found
 
-1. Use the `skill` tool to list what's discovered
+1. Use `skill` tool to list what's discovered
 2. Check that the plugin is loading (see above)
 
 ### Tool mapping
 
-When skills reference Claude Code tools, OpenCode substitutes:
-
+When skills reference Claude Code tools:
 - `TodoWrite` → `todowrite`
 - `Task` with subagents → `@mention` syntax
 - `Skill` tool → OpenCode's native `skill` tool
@@ -65,5 +62,5 @@ When skills reference Claude Code tools, OpenCode substitutes:
 
 ## Getting help
 
-- Issues: https://github.com/manalkaff/opendesign/issues
+- Report issues: https://github.com/manalkaff/opendesign/issues
 - Repo: https://github.com/manalkaff/opendesign
