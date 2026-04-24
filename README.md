@@ -42,52 +42,57 @@ Design systems created by `create-design-system` are written to `./design-system
 
 ## Installation
 
-OpenDesign ships for every major agent host.
+**Note:** Installation differs by platform.
 
 ### Claude Code
 
-```
+```bash
 /plugin marketplace add manalkaff/opendesign
-/plugin install opendesign
+/plugin install opendesign@opendesign
 ```
 
 ### Cursor
 
-Cursor reads `.cursor-plugin/plugin.json`. Install by pointing Cursor at this repo through its plugin settings.
+In Cursor Agent chat:
 
-### Codex CLI / Codex App
+```text
+/add-plugin opendesign
+```
 
-Codex reads `.codex-plugin/plugin.json`. Install by pointing Codex at this repo through its extension settings.
+Or search for "opendesign" in the plugin marketplace.
+
+### OpenAI Codex CLI
+
+Open the plugin search:
+
+```bash
+/plugins
+```
+
+Search for `opendesign` and select **Install Plugin**.
+
+### OpenAI Codex App
+
+In the Codex app, click **Plugins** in the sidebar, find **OpenDesign** in the Design section, click the `+`, and follow the prompts.
 
 ### Gemini CLI
 
 ```bash
-gemini extensions add https://github.com/manalkaff/opendesign
+gemini extensions install https://github.com/manalkaff/opendesign
+```
+
+To update:
+
+```bash
+gemini extensions update opendesign
 ```
 
 ### OpenCode
 
-Add to the `plugin` array in your `opencode.json`:
+Tell OpenCode:
 
-```json
-{
-  "plugin": ["opendesign@git+https://github.com/manalkaff/opendesign.git"]
-}
 ```
-
-Full OpenCode install notes: [`.opencode/INSTALL.md`](.opencode/INSTALL.md).
-
-### Manual (any agent that reads SKILL.md)
-
-```bash
-git clone https://github.com/manalkaff/opendesign.git
-cp -r opendesign/skills /path/to/your/project/.claude/
-```
-
-Or as a submodule:
-
-```bash
-git submodule add https://github.com/manalkaff/opendesign.git .claude/opendesign
+Fetch and follow instructions from https://raw.githubusercontent.com/manalkaff/opendesign/main/.opencode/INSTALL.md
 ```
 
 ### Fork
