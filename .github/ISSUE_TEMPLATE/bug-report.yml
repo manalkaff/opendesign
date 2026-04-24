@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a skill behaving incorrectly.
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Which skill?
+      placeholder: opendesign / wireframe / make-a-deck / ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Include the prompt you gave and the artifact the agent produced.
+    validations:
+      required: true

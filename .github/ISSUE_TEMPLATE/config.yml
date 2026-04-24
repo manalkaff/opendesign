@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/manalkaff/opendesign/discussions
+    about: For general questions and discussion, use Discussions instead of filing an issue.

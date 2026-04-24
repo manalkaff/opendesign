@@ -1,0 +1,1 @@
+@./skills/opendesign/SKILL.md
