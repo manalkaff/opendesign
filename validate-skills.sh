@@ -41,18 +41,7 @@ for dir in skills/*/; do
   fi
 done
 
-# 2. marketplace.json skills[] array must match skills/ directory.
-on_disk="$(find skills -maxdepth 2 -name SKILL.md | sort)"
-in_manifest="$(grep -oE '"skills/[^"]+/SKILL\.md"' .claude-plugin/marketplace.json | tr -d '"' | sort)"
-
-if [ "$on_disk" != "$in_manifest" ]; then
-  echo "MARKETPLACE MISMATCH between skills/ and .claude-plugin/marketplace.json"
-  echo "On disk:"
-  echo "$on_disk" | sed 's/^/  /'
-  echo "In manifest:"
-  echo "$in_manifest" | sed 's/^/  /'
-  fail=1
-fi
+# (Claude Code discovers skills by convention from ./skills/; no explicit list to keep in sync.)
 
 # 3. Version must match across every host config.
 extract_version() {

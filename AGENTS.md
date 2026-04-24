@@ -6,7 +6,7 @@ This repo is **OpenDesign** — an open-source, skills-based version of [Claude 
 
 - `skills/<skill-name>/SKILL.md` — one folder per skill. Each `SKILL.md` has YAML frontmatter (`name`, `description`) followed by the skill body.
 - `.claude-plugin/plugin.json` — Claude Code plugin metadata.
-- `.claude-plugin/marketplace.json` — Claude Code marketplace entry. The `skills[]` array lists every `SKILL.md` path; keep it in sync with the `skills/` directory.
+- `.claude-plugin/marketplace.json` — Claude Code marketplace entry. Skills are discovered by convention from `./skills/`; do not add a `skills[]` field (Claude Code's schema rejects it).
 - `.cursor-plugin/plugin.json` — Cursor plugin metadata.
 - `.codex-plugin/plugin.json` — Codex plugin metadata (richer `interface` block for app UI).
 - `.opencode/plugins/opendesign.js` — OpenCode plugin (registers skills dir + injects `opendesign` bootstrap into the first user message).

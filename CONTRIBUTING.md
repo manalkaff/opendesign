@@ -32,9 +32,8 @@ Rules:
 ## Adding a new skill
 
 1. Create `skills/<name>/SKILL.md` with frontmatter and body.
-2. Add the path to `.claude-plugin/marketplace.json` under `plugins[0].skills[]`.
-3. Add a row to the "Available skills" table in `README.md`.
-4. Open a PR. In the description, state:
+2. Add a row to the "Available skills" table in `README.md`.
+3. Open a PR. In the description, state:
    - What the skill does.
    - Why existing skills can't cover this case.
    - Any risk of overlap with `opendesign`, `frontend-design`, `create-design-system`, or `make-a-deck`.

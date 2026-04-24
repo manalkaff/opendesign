@@ -16,9 +16,8 @@ Briefly describe the change.
 ## If adding a new skill
 
 - [ ] `skills/<name>/SKILL.md` created with `name` + `description` frontmatter
-- [ ] Path added to `.claude-plugin/marketplace.json` under `plugins[0].skills[]`
 - [ ] Row added to the "Available skills" table in `README.md`
-- [ ] Versions bumped in `plugin.json` and `marketplace.json`
+- [ ] Versions bumped across all host configs (`plugin.json`, `marketplace.json`, `.cursor-plugin/`, `.codex-plugin/`, `gemini-extension.json`, `package.json`)
 
 Why can't an existing skill cover this case?
 
