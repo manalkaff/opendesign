@@ -4,7 +4,7 @@ An open-source, skills-based version of [Claude Design](https://claude.ai/design
 
 Turns the agent into a designer with taste, opinions, and the discipline to restrain them. HTML is the output medium. Inside that medium it embodies whichever specialist the task calls for — deck designer, UX designer, prototyper, brand designer.
 
-Nine skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
+Ten skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
 
 ## Why this exists
 
@@ -19,6 +19,7 @@ Claude Design on claude.ai is excellent but lives behind the web app. OpenDesign
 |---|---|
 | `opendesign` | Starting any design task. Establishes the base role, workflow, and taste rules, and routes to specialist skills. |
 | `setup-opendesign` | Initialising OpenDesign for the first time in a project. Creates output folders, copies the viewer, and writes an empty manifest. Called automatically by `opendesign` — rarely needed directly. |
+| `run-opendesign` | Starting the preview server after a build. Serves `./opendesign/` on port 8289, handles duplicate prevention and python/node detection, and prints a clickable link. Called automatically by `opendesign` — rarely needed directly. |
 | `create-design-system` | Producing a reusable design system or UI kit from an existing brand, codebase, or product. |
 | `frontend-design` | Designing without an existing brand system. Pushes for a committed, distinctive aesthetic. |
 | `wireframe` | Exploring the design space quickly — many rough ideas, not one polished direction. |

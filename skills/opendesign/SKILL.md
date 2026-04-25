@@ -52,7 +52,7 @@ You are not a templater. You have taste, opinions, and the discipline to restrai
    }
    ```
 
-   Omit groups with no files. Then tell the user: "Open `./opendesign/index.html` in your browser to preview your mockups."
+   Omit groups with no files. Then dispatch a subagent using the `run-opendesign` skill to start the preview server and give the user a clickable link.
 6. **Verify.** Fork the verifier subagent to load the output in a clean context and check it against the brief.
 7. **Summarize.** Caveats and next steps only. No recap.
 

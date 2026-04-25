@@ -1,7 +1,7 @@
 {
   "name": "opendesign",
   "description": "Open-source, skills-based version of Claude Design (claude.ai/design) for Claude Code. HTML pages, slide decks, interactive prototypes, UI kits, and brand systems — with taste, context-matching, and anti-slop discipline.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "manalkaff",
     "email": "manalkaff@gmail.com"

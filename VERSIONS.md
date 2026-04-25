@@ -1,5 +1,12 @@
 # Versions
 
+## 0.3.0
+
+Preview server — clickable link after every build, no manual terminal commands.
+
+- `run-opendesign` — new skill. Checks if port 8289 is already in use, detects python3/python/node, starts the server in the background, prints `http://localhost:8289/opendesign/` as a clickable link.
+- `opendesign` — step 5 now dispatches `run-opendesign` after writing the manifest instead of telling the user to open the file manually.
+
 ## 0.2.0
 
 Mockup viewer — browse and preview all mockups from a single page.
