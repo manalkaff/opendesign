@@ -19,6 +19,7 @@
       --border: #2e2e2e;
       --preview-bg: #f0f0f0;
       --header-height: 40px;
+      --preview-bar-bg: #242424;
     }
 
     html, body {
@@ -142,7 +143,7 @@
 
     .preview-bar {
       height: var(--header-height);
-      background: #242424;
+      background: var(--preview-bar-bg);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -226,7 +227,7 @@
         <span class="preview-bar-path" id="preview-path"></span>
         <a class="preview-bar-open" id="preview-open" href="#" target="_blank">Open ↗</a>
       </div>
-      <iframe id="preview" title="Preview"></iframe>
+      <iframe id="preview" title="Preview" style="display:none"></iframe>
       <div class="empty-state" id="empty-state">
         <strong>No file selected</strong>
         <span>Pick a file from the sidebar to preview it here.</span>
@@ -257,6 +258,14 @@
       previewFrame.style.display = 'block';
     }
 
+    function esc(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
     function renderSidebar(manifest) {
       const sections = manifest.sections || [];
       if (sections.length === 0 || sections.every(s => (s.groups || []).length === 0)) {
@@ -269,16 +278,16 @@
         const groups = section.groups || [];
         if (groups.length === 0) continue;
 
-        html += `<div class="section-label">${section.label}</div>`;
+        html += `<div class="section-label">${esc(section.label)}</div>`;
 
         for (const group of groups) {
           const files = group.files || [];
           if (files.length === 0) continue;
 
-          html += `<details class="group" open><summary>${group.slug}</summary>`;
+          html += `<details class="group" open><summary>${esc(group.slug)}</summary>`;
           for (const file of files) {
             // Use data attributes; attach listeners after inserting
-            html += `<span class="file-item" data-path="${file.path}" data-label="${file.label}">${file.label}</span>`;
+            html += `<span class="file-item" tabindex="0" data-path="${esc(file.path)}" data-label="${esc(file.label)}">${esc(file.label)}</span>`;
           }
           html += `</details>`;
         }
@@ -286,9 +295,15 @@
 
       sidebar.innerHTML = html;
 
-      // Attach click listeners
+      // Attach click and keyboard listeners
       sidebar.querySelectorAll('.file-item').forEach(el => {
         el.addEventListener('click', () => loadFile(el.dataset.path, el.dataset.label, el));
+        el.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            loadFile(el.dataset.path, el.dataset.label, el);
+          }
+        });
       });
     }
 
@@ -298,7 +313,8 @@
         if (!res.ok) throw new Error('not found');
         const manifest = await res.json();
         renderSidebar(manifest);
-      } catch {
+      } catch (err) {
+        console.warn('[OpenDesign viewer] Failed to load manifest:', err);
         sidebar.innerHTML = '<div class="sidebar-empty">No mockups yet.<br>Run the <code>opendesign</code> skill to create one.</div>';
       }
     }
