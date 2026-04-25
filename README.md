@@ -33,13 +33,13 @@ Claude Design on claude.ai is excellent but lives behind the web app. OpenDesign
 
 `opendesign` is the front door. On invocation it:
 
-1. Scans `./design-systems/*/` for existing systems (looking for `SKILL.md` or `tokens/colors_and_type.css` as markers).
+1. Scans `./opendesign/design-systems/*/` for existing systems (looking for `SKILL.md` or `tokens/colors_and_type.css` as markers).
 2. Announces what it found and picks the right one, asks, or offers to create one.
 3. Runs a structured intake if the work is new.
 4. Routes to the specialist skill for the artifact (deck → `make-a-deck`, prototype → `interactive-prototype`, etc.).
 5. Forks a verifier subagent to review against the brief.
 
-Design systems created by `create-design-system` are written to `./design-systems/<name>/` so `opendesign` can auto-discover them in future sessions. Multiple systems per project are supported — a marketing system, a product system, a deck template — and the agent picks based on task shape.
+Design systems created by `create-design-system` are written to `./opendesign/design-systems/<name>/` so `opendesign` can auto-discover them in future sessions. Multiple systems per project are supported — a marketing system, a product system, a deck template — and the agent picks based on task shape.
 
 ## Installation
 
