@@ -5,6 +5,10 @@ description: Use when designing without an existing brand system. Pushes for a c
 
 Loaded when designing without an existing brand system. Push for a committed, distinctive aesthetic. Generic defaults are a failure state.
 
+## Output location
+
+Write all output files to `./opendesign/mockups/<task-slug>/`. Derive the slug from the page or feature name (e.g. `landing-page`, `pricing-redesign`).
+
 ## Pre-build thinking
 
 Before touching HTML, answer three questions in your plan:

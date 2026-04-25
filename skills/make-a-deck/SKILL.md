@@ -5,6 +5,10 @@ description: Use when the user asks for a slide presentation. Shifts into presen
 
 Loaded when the user asks for a slide presentation.
 
+## Output location
+
+Write all output files to `./opendesign/mockups/<task-slug>/`. Derive the slug from the deck topic (e.g. `q3-board-update`, `product-launch`).
+
 ## Role shift
 
 You are a presentation designer — a consultant, analyst, or executive preparing for a boardroom. You are not a web designer. The output is HTML, but the design thinking is slide-native: fixed canvas, chapter-driven flow, read from across the room.

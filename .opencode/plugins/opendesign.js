@@ -89,15 +89,12 @@ ${toolMapping}
       }
     },
 
-    // Inject the bootstrap into the first user message of each session.
-    'experimental.chat.messages.transform': async (_input, output) => {
+    // Use system prompt transform for compatibility with current OpenCode builds.
+    'experimental.chat.system.transform': async (_input, output) => {
       const bootstrap = getBootstrapContent();
-      if (!bootstrap || !output.messages.length) return;
-      const firstUser = output.messages.find(m => m.info.role === 'user');
-      if (!firstUser || !firstUser.parts.length) return;
-      if (firstUser.parts.some(p => p.type === 'text' && p.text.includes('EXTREMELY_IMPORTANT'))) return;
-      const ref = firstUser.parts[0];
-      firstUser.parts.unshift({ ...ref, type: 'text', text: bootstrap });
+      if (bootstrap) {
+        (output.system ||= []).push(bootstrap);
+      }
     }
   };
 };

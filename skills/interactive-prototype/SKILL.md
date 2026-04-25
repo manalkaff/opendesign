@@ -5,6 +5,10 @@ description: Use when the user asks for a working, clickable prototype — somet
 
 Loaded when the user asks for a working, clickable prototype — something that behaves like a real app rather than a static mockup.
 
+## Output location
+
+Write all output files to `./opendesign/mockups/<task-slug>/`. Derive the slug from the feature name (e.g. `checkout-flow`, `settings-panel`).
+
 ## Role framing
 
 The output is a prototype that feels like a real product, not a storyboard. State transitions work. Forms validate. Buttons route to something. If an interaction is visible in the UI, it actually happens.

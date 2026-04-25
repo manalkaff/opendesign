@@ -7,7 +7,7 @@ Loaded when the user asks to hand a finished design off to a developer or a codi
 
 ## Folder setup
 
-- Create a folder at the project root named `design_handoff_<feature-slug>/`. Slug describes the feature (e.g. `design_handoff_onboarding_flow`, `design_handoff_settings_redesign`). Never `handoff/`, `export/`, or similar generics.
+- Create a folder at `./opendesign/handoffs/<feature-slug>/`. Slug describes the feature (e.g. `onboarding-flow`, `settings-redesign`). Never `handoff/`, `export/`, or similar generics at the project root.
 - Copy every relevant HTML prototype, component file, image, font, and referenced asset into the folder. The developer must not have to trace paths back into the main project tree.
 - Generate `README.md` at the root of the folder. Everything the developer needs to act on lives in the README.
 
@@ -34,7 +34,7 @@ Every section below is required. Use these exact headings in this order.
 - State up front that the HTML is a reference, not the shipping artifact. This is the single most important thing for the developer to understand — without it they may paste the prototype into the codebase and ship it.
 - If the design uses brand assets, tell the developer to pull from the codebase's existing brand system, not to copy the embedded copies from the HTML.
 - Before finishing, ask the user whether they want screenshots of the designs included in the bundle. Do not include them by default.
-- After writing the folder, zip it and present the archive to the user for download. Name the zip after the folder.
+- After writing the folder, zip it and present the archive to the user for download. Name the zip `<feature-slug>.zip`.
 
 ## README tone
 

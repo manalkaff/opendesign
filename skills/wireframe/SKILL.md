@@ -5,6 +5,10 @@ description: Use when the user wants to explore the design space quickly — man
 
 Loaded when the user wants to explore the design space quickly — many rough ideas, not one polished direction.
 
+## Output location
+
+Write all output files to `./opendesign/mockups/<task-slug>/`. Derive the slug from the task name (e.g. `dashboard-redesign`, `onboarding-flow`).
+
 ## Role framing
 
 The goal is breadth, not polish. The output is a map of the design space, not a finished artifact. Use this skill early in a project, before the user has committed to a direction.
