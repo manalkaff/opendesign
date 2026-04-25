@@ -1,5 +1,13 @@
 # Versions
 
+## 0.2.0
+
+Mockup viewer — browse and preview all mockups from a single page.
+
+- `setup-opendesign` — new first-run setup skill. Downloads `viewer.html` from GitHub, creates output folders, initialises `manifest.json`. Called automatically by `opendesign`.
+- `opendesign` — step 1 now dispatches `setup-opendesign` on first run; step 5 now scans and rewrites `manifest.json` after every build.
+- `viewer.html` — pre-built HTML viewer shipped with the plugin. Dark sidebar, iframe preview, collapsible groups, empty state. No dependencies.
+
 ## 0.1.0
 
 Initial release. Open-source, skills-based implementation of [Claude Design](https://claude.ai/design) for Claude Code.
