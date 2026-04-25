@@ -31,11 +31,18 @@ Always use **8289**.
    - Neither found, `node` found → use node
    - None found → tell the user: "Could not start the preview server — python3, python, and node are all unavailable. Open `./opendesign/index.html` manually or install Python." Then stop.
 
-3. **Start the server in the background**, serving from the project root (not from `./opendesign/`):
+3. **Start the server in the background**, serving from the project root (not from `./opendesign/`).
 
-   - python3: `python3 -m http.server 8289 --directory . &`
-   - python: `python -m http.server 8289 &`  (serves from cwd, ensure cwd is project root)
-   - node: `npx --yes serve -l 8289 . &`
+   First, capture the absolute project root:
+   ```bash
+   PROJECT_ROOT=$(pwd)
+   ```
+
+   Then start the server using that absolute path — never `.` or a relative path:
+
+   - python3: `python3 -m http.server 8289 --directory "$PROJECT_ROOT" &`
+   - python: `python -m http.server 8289 --directory "$PROJECT_ROOT" &`
+   - node: `npx --yes serve -l 8289 "$PROJECT_ROOT" &`
 
    Wait 1 second after starting to confirm the port is now bound:
    ```bash
