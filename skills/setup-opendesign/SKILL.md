@@ -9,11 +9,20 @@ You are setting up the OpenDesign output environment for this project for the fi
 
 1. **Locate `viewer.html` in the plugin cache.**
 
-   Run this glob to find the file:
-   ```
-   ~/.claude/plugins/cache/**/skills/opendesign/viewer.html
-   ```
-   Take the first match. If no match is found, tell the user that the opendesign plugin may not be installed and stop.
+   Try each glob below in order. Take the first match found across all of them. Each covers a different agent platform:
+
+   | Platform | Glob |
+   |----------|------|
+   | Claude Code | `~/.claude/plugins/cache/**/skills/opendesign/viewer.html` |
+   | OpenCode | `~/.local/share/opencode/plugins/**/skills/opendesign/viewer.html` |
+   | OpenCode (alt) | `~/.config/opencode/plugins/**/skills/opendesign/viewer.html` |
+   | OpenCode (npm) | `**/node_modules/opendesign/skills/opendesign/viewer.html` |
+   | Codex | `~/.codex/plugins/**/skills/opendesign/viewer.html` |
+   | Cursor | `~/.cursor/plugins/cache/**/skills/opendesign/viewer.html` |
+   | Gemini CLI | `~/.gemini/extensions/*/skills/opendesign/viewer.html` |
+
+   If no match is found across all globs, tell the user:
+   > Could not locate `viewer.html` automatically. Please copy it manually: find `viewer.html` inside your opendesign plugin installation and copy it to `./opendesign/index.html`. Then re-run this skill.
 
 2. **Create output folders** if they do not already exist:
    - `./opendesign/`
