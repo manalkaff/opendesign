@@ -1,15 +1,25 @@
 # OpenDesign
 
-An open-source, skills-based version of [Claude Design](https://claude.ai/design) — the design mode on claude.ai — packaged for Claude Code and any other agent that understands the skills format.
-
-Turns the agent into a designer with taste, opinions, and the discipline to restrain them. HTML is the output medium. Inside that medium it embodies whichever specialist the task calls for — deck designer, UX designer, prototyper, brand designer.
-
-Ten skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
-
 ## Why this exists
 
-Claude Design on claude.ai is excellent but lives behind the web app. OpenDesign is the same idea as a portable plugin: the skills run locally in your editor, on your files, with your existing design system in the loop. Same philosophy — intake, context-matching, taste, verifier handoff — just shipped as markdown skills you can read, fork, and extend.
+Claude Design on claude.ai is excellent. But it's locked.
 
+Locked to the browser. Locked to Anthropic models. Locked to the web app — which means no access to your local files, no integration with your existing design system, and no way to use it inside the editor where your actual work happens.
+
+I built OpenDesign to fix that. Same philosophy as Claude Design — structured intake, context-matching, taste, a verifier that checks the output against the brief — but packaged as portable markdown skills you can install in Claude Code, Cursor, Codex, Gemini CLI, or OpenCode. It runs locally, reads your codebase, and works with whatever model you're on.
+
+You own it. You can read every skill, fork it, and extend it.
+
+## What it does
+
+OpenDesign turns your AI coding agent into a designer with taste, opinions, and the discipline to restrain them. HTML is the output medium. Inside that medium it embodies whichever specialist the task calls for — deck designer, UX designer, prototyper, brand designer.
+
+It doesn't generate generic AI output. It reads your actual codebase first.
+
+![OpenDesign extracting the ReelPilot design system live from the codebase](screenshot.png)
+*OpenDesign extracting a live design system from a real codebase — colors, typography, tokens, all sourced directly from `src/app.css`.*
+
+Ten skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
 
 ## Available skills
 
@@ -103,18 +113,22 @@ Fork the repo, add your own skills under `skills/`, and install your fork throug
 
 ## Usage
 
-Once installed, just describe what you want. The agent will pick up the right skills on its own.
+Once installed, invoke with `/opendesign` and describe what you want. The agent picks up the right skills on its own.
 
 ```
-> make a pitch deck for a seed-stage AI company, 10 slides
-```
-
-```
-> design a settings page for this React app — use our existing design system
+/opendesign make a pitch deck for a seed-stage AI company, 10 slides
 ```
 
 ```
-> I want to explore a few options for the onboarding flow. rough sketches, nothing polished yet
+/opendesign design a settings page for this React app — use our existing design system
+```
+
+```
+/opendesign explore a few options for the onboarding flow. rough sketches, nothing polished yet
+```
+
+```
+/opendesign extract our design system from the codebase and document it
 ```
 
 ## Upgrading
