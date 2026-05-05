@@ -56,6 +56,8 @@ use skill tool to load opendesign
 
 OpenDesign updates automatically when you restart OpenCode.
 
+If OpenCode still shows older skill content after restart, see `Troubleshooting -> Stale cached plugin content` below. In some cases OpenCode continues using an older cached package until that cache entry is removed.
+
 To pin a specific version:
 
 ```json
@@ -89,6 +91,30 @@ To pin a specific version:
 1. Use `skill` tool to list what is discovered.
 2. Confirm the plugin loaded (see log check above).
 3. Confirm skill count increased after restart.
+
+### Stale cached plugin content
+
+If OpenCode loads the plugin but the skill text still looks outdated after you updated or reinstalled `opendesign`, OpenCode may be using a stale cached package copy under `~/.cache/opencode/packages/`.
+
+Symptoms include:
+
+- the plugin appears installed, but skill content still reflects an older revision
+- reinstalling in `~/.config/opencode/` or `~/.opencode/` does not change the loaded skill text
+- the cached package under `~/.cache/opencode/packages/` contains an older `opendesign` version than the one you expect
+
+Check the cached copy directly:
+
+```bash
+grep -n "design-systems" ~/.cache/opencode/packages/opendesign@git+https:/github.com/manalkaff/opendesign.git/node_modules/opendesign/skills/opendesign/SKILL.md
+```
+
+If that cached package is stale, remove it and restart OpenCode so it can fetch the current plugin again:
+
+```bash
+rm -rf ~/.cache/opencode/packages/opendesign@git+https:/github.com/manalkaff/opendesign.git
+```
+
+Then fully restart OpenCode and start a fresh session.
 
 ### Tool mapping
 

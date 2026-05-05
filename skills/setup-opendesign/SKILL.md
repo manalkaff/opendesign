@@ -11,7 +11,7 @@ You are setting up the OpenDesign output environment for this project for the fi
 
    Fetch the file from:
    ```
-   https://raw.githubusercontent.com/manalkaff/open-design/main/skills/opendesign/viewer.html
+   https://raw.githubusercontent.com/manalkaff/opendesign/main/skills/opendesign/viewer.html
    ```
    Write the response body directly to `./opendesign/index.html` (create `./opendesign/` first if it does not exist). If the fetch fails, tell the user:
    > Could not download the OpenDesign viewer. Check your internet connection and try again, or manually copy `viewer.html` from the opendesign plugin to `./opendesign/index.html`.
