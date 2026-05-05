@@ -1,6 +1,6 @@
 {
   "name": "opendesign",
   "description": "Open-source, skills-based version of Claude Design (claude.ai/design). HTML pages, slide decks, interactive prototypes, UI kits, and brand systems.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "contextFileName": "GEMINI.md"
 }

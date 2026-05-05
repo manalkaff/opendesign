@@ -1,5 +1,13 @@
 # Versions
 
+## 0.3.1
+
+Bug fixes for `run-opendesign` and `setup-opendesign`.
+
+- `setup-opendesign` — fixed viewer.html fetch URL (`open-design` → `opendesign`), preventing a potential silent hijack if the old repo name is reclaimed.
+- `run-opendesign` — port check now probes `/opendesign/index.html` for a 200 before treating :8289 as the OpenDesign server; a foreign process on that port now surfaces a clear error instead of a dead link.
+- `run-opendesign` — added platform detection (`uname -s`); Windows path uses `netstat` for port checks, `python`-first runtime priority, and `Start-Process` for background launch.
+
 ## 0.3.0
 
 Preview server — clickable link after every build, no manual terminal commands.
