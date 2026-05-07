@@ -25,6 +25,8 @@ It doesn't generate generic AI output. It reads your actual codebase first.
 
 ![OpenDesign demo 2](showcase2.gif)
 
+![OpenDesign demo 3](showcase3.gif)
+
 Ten skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
 
 ## Available skills
