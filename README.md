@@ -19,6 +19,12 @@ It doesn't generate generic AI output. It reads your actual codebase first.
 ![OpenDesign extracting the ReelPilot design system live from the codebase](screenshot.png)
 *OpenDesign extracting a live design system from a real codebase — colors, typography, tokens, all sourced directly from `src/app.css`.*
 
+## Showcase
+
+![OpenDesign demo](showcase1.gif)
+
+![OpenDesign demo 2](showcase2.gif)
+
 Ten skills ship together. One is the entry point (`opendesign`); the others are loaded on demand by the workflow.
 
 ## Available skills
