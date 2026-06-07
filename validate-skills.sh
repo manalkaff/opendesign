@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Validate that every skill has frontmatter with name + description,
-# and that marketplace.json lists exactly the skills on disk.
+# and that host plugin versions stay in sync.
 
 set -eu
 cd "$(dirname "$0")"
@@ -43,7 +43,7 @@ done
 
 # (Claude Code discovers skills by convention from ./skills/; no explicit list to keep in sync.)
 
-# 3. Version must match across every host config.
+# 2. Version must match across every host config.
 extract_version() {
   grep -oE '"version"[[:space:]]*:[[:space:]]*"[^"]+"' "$1" | head -1 | sed -E 's/.*"([^"]+)"$/\1/'
 }

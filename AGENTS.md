@@ -20,8 +20,8 @@ This repo is **OpenDesign** — an open-source, skills-based version of [Claude 
 - Skills are written in direct imperative voice. No marketing language, no apologies, no emoji.
 - Every `SKILL.md` must start with frontmatter containing `name` and `description`. `description` is a "Use when..." sentence that describes triggering conditions, not a summary of what the skill does.
 - Keep `opendesign/SKILL.md` as the entry-point/base skill. Specialist skills (`wireframe`, `make-a-deck`, etc.) are loaded on demand by the workflow described there.
-- If you add a new skill: create `skills/<name>/SKILL.md` with frontmatter, add the path to `marketplace.json`, and add a row to the README table.
-- If you rename or remove a skill: update `marketplace.json` and the README table in the same change.
+- If you add a new skill: create `skills/<name>/SKILL.md` with frontmatter and add a row to the README table. Do not add a per-skill list to `.claude-plugin/marketplace.json`; Claude Code discovers skills from `./skills/`.
+- If you rename or remove a skill: update the README table and any direct references to that skill in the same change.
 
 ## Rules when editing the plugin config
 
