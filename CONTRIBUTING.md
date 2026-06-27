@@ -42,7 +42,7 @@ Rules:
 
 - Keep the frontmatter `name` stable — changing it is a breaking change for users.
 - If you're narrowing or widening the trigger, update the `description` in the same change.
-- Bump the version in `plugin.json` and `marketplace.json` for any user-visible change.
+- Bump the version in every host config for any user-visible change. Run `bash validate-skills.sh` to catch version drift.
 
 ## Things I'll reject
 
@@ -50,4 +50,4 @@ Rules:
 - Skill bodies that read like a blog post or pitch.
 - Emoji, marketing adjectives, or aspirational prose.
 - Frontmatter that summarizes the skill's workflow instead of its trigger.
-- PRs that add a skill file but forget the `marketplace.json` or README updates.
+- PRs that add a skill file but forget the README update.
